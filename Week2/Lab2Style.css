@@ -1,0 +1,159 @@
+body {
+
+    background-color: #d2e4da;
+    margin: 0 0 50px;
+
+}
+
+#page-title {
+
+    color: #35483D;
+    text-shadow: 3px 3px lightgrey;
+    text-align: center;
+    font-size: 80px;
+    font-family: "Gill Sans MT", sans-serif, "Times New Roman", serif, "Georgia", serif;
+    padding-block: 25px;
+    background-color: white;
+
+}
+
+#my-name {
+
+    color: #35483D;
+    text-align: center;
+    font-size: 50px;
+    font-family: Didot, serif, "Times New Roman", serif, "Georgia", serif;
+    margin-left: 500px;
+    margin-right: 500px;
+    background-color: white;
+    padding-block: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position:relative;
+    top: -10px;
+
+}
+
+.section-header {
+
+    color: #475F51;
+    font-family: "Gill Sans MT", sans-serif, "Times New Roman", serif, "Georgia", serif;
+    font-size: 40px;
+    text-align: center;
+    padding-block: 25px;
+    padding-left: 485px;
+    padding-right: 485px;
+    background-color: white;
+
+}
+
+.favorite-section {
+
+    border-style: dotted;
+    border-color: white;
+
+
+}
+
+p {
+
+    color: #2D3B33;
+    text-align: center;
+    font-size: 25px;
+    font-family: Didot, serif, "Times New Roman", serif, "Georgia", serif;
+    padding-block: 20px;
+    background-color: #baccc2;
+    margin-left: 400px;
+    margin-right: 400px;
+
+}
+
+#favorite-show-title {
+
+    color: rgba(48, 96, 48, 0.71);
+    font-family: Didot, serif, "Times New Roman", serif, "Georgia", serif;
+    font-style: italic;
+
+}
+
+#favorite-music-name {
+
+    color: darkslategrey;
+    font-family: Didot, serif, "Times New Roman", serif, "Georgia", serif;
+    font-weight: bold;
+
+}
+
+#most-favorite-food {
+
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-family: Didot, serif, "Times New Roman", serif, "Georgia", serif;
+    padding-block: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+ul {
+
+    color: #2D3B33;;
+    list-style-position: inside;
+    font-family: Didot, serif, "Times New Roman", serif, "Georgia", serif;
+    font-size: 25px;
+    padding-block: 20px;
+    padding-left: 280px;
+    background-color: #baccc2;
+    margin-left: 400px;
+    margin-right: 400px;
+
+
+}
+
+a {
+
+    text-decoration: none;
+    color: white;
+
+}
+
+.favorite-image {
+
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 25px;
+    width: 300px;
+    max-width: 100%;
+    left: 400px;
+    position: relative;
+    border-radius: 60px;
+
+}
+
+table, tr, td {
+
+    border-style: solid;
+    border-color: white;
+    padding: 20px;
+    font-size:25px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+
+}
+
+th {
+
+    color: white;
+    background-color: #b3ceba;
+    font-size: 30px;
+}
+
+.table-link {
+
+    font-family: Didot, serif, "Times New Roman", serif, "Georgia", serif;
+    color: #8ca291;
+
+}
+

@@ -1,0 +1,42 @@
+body {
+        background-color: white;
+}
+
+h1 {
+        font-family: "Gill Sans MT", sans-serif, "Times New Roman", serif, "Georgia", serif;
+        font-size: 80px;
+        text-align: center;
+}
+
+.missile-link {
+        font-size: 30px;
+}
+
+#real-alert {
+        font-family: Impact, sans-serif, "Times New Roman", serif, "Georgia", serif;
+        font-weight: bolder;
+        color: #c40101;
+        background-color: black;
+        position: relative;
+        padding: 20px;
+        margin: 20px;
+        top: 100px;
+        left: 600px;
+}
+
+#test-only {
+        font-family: Georgia, sans-serif, "Times New Roman", serif, "Georgia", serif;
+        background-color: lightgrey;
+        color: rgba(65, 71, 77, 0.65);
+        text-align: center;
+        position: relative;
+        padding: 20px;
+        margin: 20px;
+        top: 150px;
+        left: 560px;
+        text-decoration: none;
+}
+
+#important {
+        text-decoration: underline;
+}

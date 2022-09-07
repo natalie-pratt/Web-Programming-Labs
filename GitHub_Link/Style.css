@@ -1,0 +1,54 @@
+
+body {
+
+    background-image: url("Code_img.jpg");
+    background-color: rgba(17, 6, 6, 0.88);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    margin: 0;
+
+}
+
+h1 {
+
+    padding-block: 100px;
+    color: white;
+    text-align: center;
+    font-family: "Gill Sans MT", sans-serif, "Times New Roman", serif, "Georgia", serif;
+    font-size: 75px;
+
+}
+
+#github-link {
+
+    width: 300px;
+    height: auto;
+
+}
+
+.link {
+
+    margin:0;
+    position: relative;
+    display: inline-block;
+    left: 600px;
+
+}
+
+.link .hover-shade {
+
+    display: none;
+    position: absolute;
+    width: 300px;
+    height: 110px;
+    opacity: 0.3;
+
+}
+
+.link:hover .hover-shade {
+
+    display: inline;
+
+}

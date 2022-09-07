@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Forms</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+          crossorigin="anonymous">
+</head>
+<body class="m-2">
+
+    <div class="jumbotron">
+        <h1>Please provide feedback. You may do so anonymously. Thanks!</h1>
+    </div>
+
+<form class="mx-5">
+    <div>
+        <label for="name">Name</label> <input id="name" name="name" class="form-control">
+        <br>
+        <label for="email">Email</label> <input id="email" name="email" class="form-control">
+        <br>
+        <label for="comments">Comments (required)</label>
+        <br>
+        <textarea id="comments" name="comments" class="form-control" required></textarea>
+        <br>
+        <p>Are you a current student?</p>
+    <div class="form-check">
+        <input id="yes" name="current-student" type="radio" class="form-check-input" checked>
+            <label for="yes" class="form-check-label"></label>Yes
+    </div>
+    <div class="form-check">
+        <input id="no" name="current-student" type="radio" class="form-check-input">
+            <label for="no" class="form-check-label"></label>No
+    </div>
+        <br>
+        <input type="submit" class="btn btn-outline-success">
+    </div>
+</form>
+
+</body>
+</html>

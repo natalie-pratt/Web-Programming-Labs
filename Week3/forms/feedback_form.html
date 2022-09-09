@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Forms</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+          crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="feedback_styles.css">
+</head>
+<body class="m-4">
+
+    <div class="jumbotron ">
+        <h1 class="display-4">Please provide feedback. You may do so anonymously. Thanks!</h1>
+    </div>
+
+    <div class="row">
+
+    <div id="feedback-desc" class="col-md-6">
+        <div class="mx-5 mt-5">
+            <p>We want to hear from you. Feedback from our students
+                is greatly appreciated!</p>
+            <p>You may leave your name and email blank if you wish
+                to submit comments anonymously.</p>
+            <p>If you would like to hear back from us,
+                please provide your contact information in
+                the given fields.</p>
+        </div>
+    </div>
+
+    <div id="form-center" class="col-md-6">
+        <form id="feedback-form" class="mx-5 my-5">
+            <div>
+                <label for="name">Name</label> <input id="name" name="name" class="form-control">
+                <label for="email">Email</label> <input id="email" name="email" class="form-control">
+                <label for="comments">Comments<span id="required-asterisk">*</span></label>
+                <textarea id="comments" name="comments" class="form-control" required></textarea>
+                <p class="current-student-text">Are you a current student?</p>
+                <div class="form-check">
+                    <input id="yes" name="current-student" type="radio" class="form-check-input" checked>
+                        <label for="yes" class="form-check-label">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input id="no" name="current-student" type="radio" class="form-check-input">
+                        <label for="no" class="form-check-label">No</label>
+                </div>
+                <input id="submit-button" type="submit" class="btn btn-lg btn-light">
+            </div>
+        </form>
+    </div>
+    </div>
+</body>
+</html>

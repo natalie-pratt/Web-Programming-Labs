@@ -2,9 +2,11 @@ body {
         background-color: white;
 }
 
-h1 {
+.jumbotron {
+        background-color: darkred;
         font-family: "Gill Sans MT", sans-serif, "Times New Roman", serif, "Georgia", serif;
-        font-size: 80px;
+        font-size: 120px;
+        color: white;
         text-align: center;
 }
 
@@ -21,7 +23,7 @@ h1 {
         padding: 20px;
         margin: 20px;
         top: 100px;
-        left: 600px;
+        left: 580px;
 }
 
 #test-only {
@@ -33,7 +35,7 @@ h1 {
         padding: 20px;
         margin: 20px;
         top: 150px;
-        left: 560px;
+        left: 538px;
         text-decoration: none;
 }
 

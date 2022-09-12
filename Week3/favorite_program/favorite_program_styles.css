@@ -1,6 +1,7 @@
 body {
     background-color: rgba(97, 68, 68, 0.06);
     color: #614444;
+    font-family: "Noto Sans", sans-serif;
 }
 
 #page-header {
@@ -75,13 +76,24 @@ body {
 }
 
 .image-background {
-    background-color: #A08484;
+    background-image: linear-gradient(to bottom, #A08484, #A08484E2, #A0848473, #A0848459);
+    border-radius: 80px;
+    padding-block: 30px;
+}
+
+.heading-2-white {
+    color: white;
+    font-family: 'Merriweather Sans', sans-serif;
+    text-align: center;
 }
 
 .screenshot {
-    display: inline;
-    height: 300px;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-block: 50px;
+    height: 600px;
     width: auto;
-    margin: 30px;
 }
 

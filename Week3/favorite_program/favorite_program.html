@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorite Program</title>
+<!--    Bootstrap   -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+          crossorigin="anonymous">
+<!--    Google Fonts    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Josefin+
+    Sans&family=Merriweather+Sans:wght@700&display=swap" rel="stylesheet">
+<!--    Favorite Program CSS File   -->
+    <link rel="stylesheet" type="text/css" href="favorite_program_styles.css">
+</head>
+<body>
+
+<div id="page-header" class="jumbotron">
+    <h1 id="main-heading" class="display-3">My Favorite Program</h1>
+    <button id="github-button" class="btn btn-lg btn-light">
+        <a id="github-link" href="https://github.com/natalie-pratt/Favorite-Program">
+            Github Repository</a>
+    </button>
+</div>
+
+<hr id="top-of-page-hr">
+<hr id="hr-2">
+
+<div class="container mx-3 my-5">
+
+    <h2 class="heading-2">Program Description</h2>
+
+    <p id="program-desc">I wrote this program in my Java class in the Spring semester
+        (it was started for us by Clara).
+        It's a support ticket program that allows you to report an issue, resolve issues
+        and save/search them -
+        it has a GUI as well. The finished product is my favorite, but it was complex
+        and very difficult to write.</p>
+
+    <h2 class="heading-2">Some example code</h2>
+
+    <div class="code-examples my-5">
+        <h4 class="code-example-headings">SQL statement to get open tickets</h4>
+        <pre class="code-examples">
+            <code>
+                String selectAllSQL = "SELECT * FROM ticket WHERE status = 'OPEN' ORDER BY priority ASC";
+            </code>
+        </pre>
+        <h4 class="code-example-headings">Receiving and storing data from SQL query</h4>
+        <pre class="code-examples">
+            <code>
+                if (resultSet.getLong("dateResolved") == 0) { // Check long resolvedDate not null
+
+                    Ticket openTicket = new Ticket(description, priority,
+                        reporter, dateReported, id, null, resolution, Ticket.TicketStatus.valueOf(status));
+
+                    tickets.add(openTicket); // If it's null, set date resolved as null and add to list
+            </code>
+        </pre>
+
+        <h4 class="code-example-headings">Creating a new, open ticket</h4>
+        <pre>
+            <code>
+                public Ticket(String desc, int p, String rep, Date date) {
+
+                        this.description = desc;
+                        this.priority = p;
+                        this.reporter = rep;
+                        this.dateReported = date;
+                        this.status = TicketStatus.OPEN;
+                }
+            </code>
+        </pre>
+    </div>
+
+    <h2 class="heading-2">Screenshots of program running</h2>
+
+</div>
+
+<div class="image-background container">
+    <div class="program-screenshots">
+        <img class="screenshot" src="favorite_program_screenshot1.png" alt="Screenshot of program running.">
+        <img class="screenshot" src="favorite_program_screenshot2.png" alt="Screenshot of program using search feature.">
+        <img class="screenshot" src="favorite_program_screenshot3.png" alt="Screenshot of program resolving ticket.">
+        <img class="screenshot" src="favorite_program_screenshot4.png" alt="Screenshot of program deleting resolved ticket.">
+    </div>
+</div>
+
+</body>
+</html>

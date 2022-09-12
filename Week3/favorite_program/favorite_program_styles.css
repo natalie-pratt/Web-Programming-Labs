@@ -1,0 +1,87 @@
+body {
+    background-color: rgba(97, 68, 68, 0.06);
+    color: #614444;
+}
+
+#page-header {
+    background-color: black;
+    border-radius: 0;
+    position: relative;
+    text-align: center;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-stretch: expanded;
+    font-size: 80px;
+    color: white;
+    margin: 0;
+}
+
+#main-heading {
+    position: relative;
+}
+
+#github-button {
+    position: relative;
+}
+
+#page-header::before {
+    content: "";
+    background: url("computer-code.jpg") no-repeat center;
+    background-size: cover;
+    position: absolute;
+    opacity: 50%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#github-link {
+    color: #614444;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+#top-of-page-hr {
+    border: none;
+    background-color: #A08484;
+    height: 50px;
+    margin: 0;
+    position: relative;
+}
+
+#hr-2 {
+    border: none;
+    background-color: #A08484;
+    height: 15px;
+}
+
+#program-desc {
+    font-size: 20px;
+}
+
+.heading-2 {
+    font-family: 'Merriweather Sans', sans-serif;
+    margin-block: 45px;
+}
+
+.code-example-headings {
+    color: rgba(97, 68, 68, 0.82);
+    font-family: 'Merriweather Sans', sans-serif;
+    margin: 20px;
+}
+
+.code-examples {
+    margin: 25px;
+}
+
+.image-background {
+    background-color: #A08484;
+}
+
+.screenshot {
+    display: inline;
+    height: 300px;
+    width: auto;
+    margin: 30px;
+}
+

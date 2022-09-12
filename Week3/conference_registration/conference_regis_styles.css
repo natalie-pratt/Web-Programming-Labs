@@ -1,0 +1,52 @@
+.jumbotron {
+    background-color: #CCBEAF;
+    color: white;
+    text-align: center;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+body {
+    background-color: #CCBEAF;
+    background-image: linear-gradient(to top, #CCBEAF, #D2C6B9, #E6DFD7, #F2EFEB, #F2EFEB);
+    color: #4d4843;
+    font-size: 20px;
+}
+
+#registration-form {
+    line-height: 60px;
+    width: 300px;
+    display: inline;
+    justify-content: center;
+}
+
+#yes {
+    position: relative;
+    bottom: 4px;
+    height: 18px;
+    width: 18px;
+    vertical-align: middle;
+}
+
+#no {
+    position: relative;
+    bottom: 4px;
+    height: 18px;
+    width: 18px;
+    vertical-align: middle;
+}
+
+#morning-session {
+    position: relative;
+    bottom: 4px;
+    height: 18px;
+    width: 18px;
+    vertical-align: middle;
+}
+
+#afternoon-session {
+    position: relative;
+    bottom: 4px;
+    height: 18px;
+    width: 18px;
+    vertical-align: middle;
+}

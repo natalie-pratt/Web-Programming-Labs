@@ -1,0 +1,71 @@
+.jumbotron {
+    background-color: darkslategrey;
+    color: white;
+    font-family: "Noto Sans", sans-serif;
+}
+
+body {
+    background-color: #9DBDAEA3;
+    color: darkslategrey;
+    font-family: "lora", serif;
+}
+
+#feedback-desc {
+    font-family: "lora", serif;
+    font-size: 25px;
+    text-align: center;
+    line-height: 55px;
+}
+
+#feedback-form {
+    font-family: "lora", serif;
+    font-size: 25px;
+    position: relative;
+    width: 60%;
+    box-sizing: border-box;
+    line-height: 50px;
+}
+
+#required-asterisk {
+    color: #af0b0b;
+}
+
+#yes {
+    position: relative;
+    bottom: 4px;
+    height: 18px;
+    width: 18px;
+    vertical-align: middle;
+}
+
+#no {
+    position: relative;
+    bottom: 4px;
+    height: 18px;
+    width: 18px;
+    vertical-align: middle;
+    color: darkslategrey;
+}
+
+#form-center {
+    display: flex;
+    justify-content: center;
+}
+
+#submit-button {
+    background-color: darkslategrey;
+    border: none;
+    color: white;
+    font-family: "Noto Sans", sans-serif;
+}
+
+#submit-button:hover {
+    background-color: #2F4F4FC6;
+    border: none;
+}
+
+#submit-button:active{
+    background-color: rgba(47, 79, 79, 0.62);
+    border: none;
+
+}

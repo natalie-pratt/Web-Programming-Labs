@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>College Credits</title>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+        crossorigin="anonymous">
+</head>
+<body class="m-5">
+
+<label for="credit-count">How many credits are you taking this semester?</label>
+<input type="number" id="credit-count">
+<button id="enter-button" class="btn btn-dark btn-md">Enter</button>
+
+<p id="statusMessage"></p>
+
+<script>
+
+    let creditsInput = document.querySelector('#credit-count')
+    let enterButton = document.querySelector('#enter-button')
+    let statusMessage = document.querySelector('#statusMessage')
+
+    enterButton.addEventListener('click', function() {
+
+        let credits = creditsInput.value
+
+        if (credits < 0) {
+            statusMessage.innerHTML = 'You can\'t be enrolled in a negative' +
+                ' number of credits.'
+            } else if (credits > 24) {
+                statusMessage.innerHTML = "You can't be enrolled in more than 24 credits."
+            } else if (credits >= 12) {
+                statusMessage.innerHTML = 'You are enrolled as a full time student'
+            } else if (credits >= 6) {
+                statusMessage.innerHTML = 'You are enrolled as a half time student.'
+            } else {
+                statusMessage.innerHTML = 'You are enrolled less than half time.'
+            }
+
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Game</title>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+        crossorigin="anonymous">
+
+</head>
+<body class="m-5">
+
+  <p>What is the state capital of Minnesota?</p>
+
+  <button class="incorrect-answer">Minneapolis</button>
+  <button id="correct-answer">St Paul</button>
+  <button class="incorrect-answer">Duluth</button>
+
+  <p id="result"></p>
+
+<script>
+
+  let correctAnswerButton = document.querySelector('#correct-answer')
+
+  let defaultButtonColor = correctAnswerButton.style.backgroundColor
+
+      console.log(correctAnswerButton)
+
+  let result = document.querySelector('#result')
+
+  correctAnswerButton.addEventListener('click', function() {
+
+    result.innerHTML = 'Correct answer!'
+    correctAnswerButton.style.backgroundColor = 'darkSlateGrey'
+    correctAnswerButton.style.color = 'white'
+  })
+
+  let incorrectAnswerButtons = document.querySelectorAll('.incorrect-answer')
+
+  incorrectAnswerButtons.forEach (function(incorrectAnswerButton) {
+
+      incorrectAnswerButton.addEventListener('click', function() {
+          result.innerHTML = 'Incorrect, try again.'
+          correctAnswerButton.style = defaultButtonColor
+      })
+  })
+
+</script>
+</body>
+</html>

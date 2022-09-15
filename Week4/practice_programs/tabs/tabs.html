@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabs</title>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="m-5">
+
+<h1>Favorite Foods</h1>
+
+<div id="tab-container">
+  <button data-content-id="sushi" class="tab-button">Sushi</button>
+  <button data-content-id="chipotle" class="tab-button">Chipotle</button>
+  <button data-content-id="burgers" class="tab-button">Cheese Burgers</button>
+</div>
+
+<div id="sushi" class="tab-content">Sushi is my favorite</div>
+<div id="chipotle" class="tab-content">I adore Chipotle</div>
+<div id="burgers" class="tab-content">Cheese burgers are amazing</div>
+
+<script>
+
+  let buttons = document.querySelectorAll('.tab-button')
+  let tabContents = document.querySelectorAll('.tab-content')
+
+  tabContents.forEach( function(divEl) {
+      divEl.style.display = 'none'
+  })
+
+  tabContents[0].style.display = 'block'
+
+  buttons.forEach( function(button) {
+
+      button.addEventListener('click', function() {
+
+          tabContents.forEach( function(divEl) {
+              divEl.style.display = 'none'
+          })
+
+          let contentID = this.getAttribute('data-content-id')
+          let tabContent = document.querySelector('#' + contentID)
+
+          tabContent.style.display = 'block'
+
+      })
+
+
+  })
+
+</script>
+
+</body>
+</html>

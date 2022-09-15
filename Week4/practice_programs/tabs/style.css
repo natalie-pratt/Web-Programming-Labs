@@ -1,0 +1,19 @@
+body {
+    background-color: #D2C6B9;
+}
+
+h1 {
+    color: #2D3B33;
+}
+
+.tab-button {
+    background-color: #8ca291;
+    border: none;
+    padding: 10px;
+    margin: 1px;
+    outline: none;
+}
+
+#tab-container {
+    background-color: white;
+}

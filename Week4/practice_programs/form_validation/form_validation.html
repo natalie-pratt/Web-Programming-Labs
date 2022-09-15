@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+        crossorigin="anonymous">
+</head>
+<body class="m-5">
+
+  <label for="username" >Please enter your name:</label>
+  <input type="text" id="username">
+  <button id="save-username" class="btn btn-dark btn-md">Save</button>
+
+  <p id="welcome-message"></p>
+
+<script>
+
+  let saveButton = document.querySelector('#save-username')
+  let nameInput = document.querySelector('#username')
+  let welcomeMessage = document.querySelector('#welcome-message')
+
+  saveButton.addEventListener('click', function() {
+
+      let name = nameInput.value
+
+      if (name.length < 2) {
+          welcomeMessage.innerHTML = "Please enter at least two letters."
+      } else {
+          welcomeMessage.innerHTML = `Welcome, ${name}!`
+      }
+
+  })
+
+</script>
+</body>
+</html>

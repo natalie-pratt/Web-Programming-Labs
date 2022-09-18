@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>List</title>
+    <!--   Bootstrap   -->
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
           integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
@@ -19,14 +20,17 @@
 
 <script>
 
+    // Define and save into variables all elements used from html
     let listInput = document.querySelector('#list-input')
     let addButton = document.querySelector('#add-button')
     let unorderedList = document.querySelector('#unordered-list')
     let clearButton = document.querySelector('#clear')
 
+    // Define default number of list items and max number
     let listElements = 0
     let maxElements = 10
 
+    // Make add button activate when enter key is pressed
     document.addEventListener('keyup', function() {
 
         if (event.keyCode === 13 || Event.key === 'Enter') {
@@ -34,30 +38,40 @@
         }
     })
 
+    // Add event listener to add button when clicked
     addButton.addEventListener('click', function() {
 
+        // Define value of a list item
         let listItem = listInput.value
 
+        // Ensure no more than 10 items can be added to list
         if (listElements === maxElements) {
+
             alert('Error - cannot add more than ten items to list.' +
                 ' Clear items from list to add more.')
             return
+          // Ensure that user enters no less than 1, and no more than 50 characters
         } else if (listItem.length === 0 || listItem.length > 50) {
+
             alert("Text must be between 1-50 characters.")
             return
         } else {
+
+            // After validation, create new list item
             let newListItem = document.createElement('li')
             newListItem.innerHTML = listItem
-            unorderedList.appendChild(newListItem)
-            listInput.value = ''
-            listElements++
+            unorderedList.appendChild(newListItem) // Add new item to list
+            listInput.value = '' // Clear input field
+            listElements++ // Add one to list elements
         }
 
+        // Add event listener to clear button when clicked
         clearButton.addEventListener('click', function() {
 
+            // Clear list
             unorderedList.innerHTML = ''
             listInput.value = ''
-            listElements = 0
+            listElements = 0 // Set number of list items back to 0
         })
 
     })

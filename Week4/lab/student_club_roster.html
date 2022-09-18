@@ -14,7 +14,7 @@
       input {
           width: 100%;
           padding: 5px;
-          margin: 5px 5px 5px 0px;
+          margin: 5px 5px 5px 0;
           box-sizing: border-box;
 
       }
@@ -53,7 +53,82 @@
 
 <script>
 
+    // Define and save into variables all elements used from html
+    let studentNameInput = document.querySelector('#student-name')
+    let studentIDInput = document.querySelector('#student-id')
+    let studentGPAInput = document.querySelector('#student-gpa')
+    let addStudentButton = document.querySelector('#add-student')
+    let studentCount = document.querySelector('#student-count')
+    let studentList = document.querySelector('#student-list')
+    let removeButton = document.querySelector('#remove-selected-students')
 
+    // Set the default number of students to 0
+    studentCount.innerHTML = '0'
+
+    // Make add button activate when enter is pressed
+    if (event.keyCode === 13 || Event.key === 'Enter') {
+        addStudentButton.click()
+    }
+
+    // Event listener for the button to add students
+    addStudentButton.addEventListener('click', function () {
+
+        // Save input info into variables
+        studentName = studentNameInput.value
+        studentID = studentIDInput.value
+        studentGPA = studentGPAInput.value
+
+        // Create template string for student info
+        let listItem = `Student name: ${studentName};
+        StudentID: ${studentID}; StudentGPA: ${studentGPA}`
+
+        // Text validation - make sure all fields have a value
+        if (studentName.length === 0) {
+
+            alert('Please enter student name.')
+            return
+        }
+        if (studentID.length === 0) {
+
+            alert('Please enter student ID.')
+            return
+        }
+        if (studentGPA.length === 0) {
+
+            alert('Please enter student GPA.')
+            return
+        }
+
+        // If all fields have a value, create new list item
+        let newListItem = document.createElement('li')
+        newListItem.innerHTML = listItem // Add list item to list
+        studentList.appendChild(newListItem)
+        studentNameInput.value = '' // Empty fields when list item is added
+        studentIDInput.value = ''
+        studentGPAInput.value = ''
+        studentCount.innerHTML++ // Increase by one the number of students in list
+
+        // Add event listener to list items to select for deletion
+        newListItem.addEventListener('click', function () {
+
+            // Toggle list items to the selected class when clicked
+            newListItem.classList.toggle('selected')
+
+        })
+
+        // Add event listener to the remove button when clicked
+        removeButton.addEventListener('click', function () {
+
+            // Save all selected list items to a variable
+            let selectedStudents = document.querySelectorAll('.selected')
+
+            // Loop through selected students and remove from list
+            selectedStudents.forEach(function (deleteListItem) {
+                deleteListItem.remove()
+                studentCount.innerHTML-- // Subtract one student count for each removed from list
+            })
+        })
+    })
 
     /* Add the following functionality to this page
 
@@ -79,7 +154,7 @@
             - Update the span#student-count value to the new number of students (1pt)
     
         * Add an event listener so that when button#remove-selected-students is clicked:
-            - Remove all of the elements with the class="selected" from the list.   (3pt)
+            - Remove all the elements with the class="selected" from the list.   (3pt)
             - Using the remove() function on an element will remove it. Example https://jsfiddle.net/rk9pm4vg/
         
         You should not need to modify any of the HTML. 

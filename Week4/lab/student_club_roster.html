@@ -66,9 +66,12 @@
     studentCount.innerHTML = '0'
 
     // Make add button activate when enter is pressed
-    if (event.keyCode === 13 || Event.key === 'Enter') {
-        addStudentButton.click()
-    }
+    document.addEventListener('keyup', function() {
+
+        if (event.keyCode === 13 || Event.key === 'Enter') {
+            addStudentButton.click()
+        }
+    })
 
     // Event listener for the button to add students
     addStudentButton.addEventListener('click', function () {

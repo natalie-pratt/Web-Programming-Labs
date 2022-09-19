@@ -83,54 +83,53 @@
 
         // Create template string for student info
         let listItem = `Student name: ${studentName};
-        StudentID: ${studentID}; StudentGPA: ${studentGPA}`
+        Student ID: ${studentID}; Student GPA: ${studentGPA}`
 
-        // Text validation - make sure all fields have a value
+        // Validate whether any fields are empty, warn the user and return
         if (studentName.length === 0) {
 
-            alert('Please enter student name.')
+            alert('Enter student name')
+            return
+        } else if (studentID.length === 0) {
+
+            alert('Please enter student ID')
+            return
+        } else if ( studentGPA.length === 0 || studentGPA < 0 || studentGPA > 4) {
+
+            alert('Please enter student GPA between 0-4')
             return
         }
-        if (studentID.length === 0) {
 
-            alert('Please enter student ID.')
-            return
-        }
-        if (studentGPA.length === 0) {
+            // If all fields have a value, create new list item
+            let newListItem = document.createElement('li')
+            newListItem.innerHTML = listItem // Add list item to list
+            studentList.appendChild(newListItem)
+            studentNameInput.value = '' // Empty fields when list item is added
+            studentIDInput.value = ''
+            studentGPAInput.value = ''
+            studentCount.innerHTML++ // Increase by one the number of students in list
 
-            alert('Please enter student GPA.')
-            return
-        }
+            // Add event listener to list items to select for deletion
+            newListItem.addEventListener('click', function () {
 
-        // If all fields have a value, create new list item
-        let newListItem = document.createElement('li')
-        newListItem.innerHTML = listItem // Add list item to list
-        studentList.appendChild(newListItem)
-        studentNameInput.value = '' // Empty fields when list item is added
-        studentIDInput.value = ''
-        studentGPAInput.value = ''
-        studentCount.innerHTML++ // Increase by one the number of students in list
+                // Toggle list items to the selected class when clicked
+                newListItem.classList.toggle('selected')
 
-        // Add event listener to list items to select for deletion
-        newListItem.addEventListener('click', function () {
-
-            // Toggle list items to the selected class when clicked
-            newListItem.classList.toggle('selected')
-
-        })
-
-        // Add event listener to the remove button when clicked
-        removeButton.addEventListener('click', function () {
-
-            // Save all selected list items to a variable
-            let selectedStudents = document.querySelectorAll('.selected')
-
-            // Loop through selected students and remove from list
-            selectedStudents.forEach(function (deleteListItem) {
-                deleteListItem.remove()
-                studentCount.innerHTML-- // Subtract one student count for each removed from list
             })
-        })
+
+            // Add event listener to the remove button when clicked
+            removeButton.addEventListener('click', function () {
+
+                // Save all selected list items to a variable
+                let selectedStudents = document.querySelectorAll('.selected')
+
+                // Loop through selected students and remove from list
+                selectedStudents.forEach(function (deleteListItem) {
+                    deleteListItem.remove()
+                    studentCount.innerHTML-- // Subtract one student count for each removed from list
+                })
+            })
+
     })
 
     /* Add the following functionality to this page

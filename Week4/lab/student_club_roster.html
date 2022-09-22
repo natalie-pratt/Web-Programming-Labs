@@ -86,15 +86,48 @@
         Student ID: ${studentID}; Student GPA: ${studentGPA}`
 
         // Validate whether any fields are empty, warn the user and return
+        if (studentName.length === 0 && studentID === 0 && (studentGPA.length === 0 || studentGPA < 0 || studentGPA > 4)) {
+
+            alert('Enter student name \n' +
+                'Enter student ID \n' +
+                'Enter student GPA between 0-4')
+            return
+        }
+
+        if (studentName.length === 0 && studentID === 0 ) {
+
+            alert('Enter student name \n' +
+                'Enter student ID \n')
+            return
+        }
+
+        if (studentName.length === 0  && (studentGPA < 0 || studentGPA > 4)) {
+
+            alert('Enter student name \n' +
+                'Enter student GPA between 0-4')
+            return
+        }
+
+        if (studentID === 0 && (studentGPA < 0 || studentGPA > 4)) {
+
+            alert('Enter student ID \n' +
+                'Enter student GPA between 0-4')
+            return
+        }
+
         if (studentName.length === 0) {
 
             alert('Enter student name')
             return
-        } else if (studentID.length === 0) {
+        }
+
+        if (studentID.length === 0) {
 
             alert('Please enter student ID')
             return
-        } else if ( studentGPA.length === 0 || studentGPA < 0 || studentGPA > 4) {
+        }
+
+        if ( studentGPA.length === 0 || studentGPA < 0 || studentGPA > 4) {
 
             alert('Please enter student GPA between 0-4')
             return

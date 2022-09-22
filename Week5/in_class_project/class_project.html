@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GitHub Repository Analysis</title>
+  <!-- Optional - add some styles -->
+</head>
+
+<body>
+
+<div>
+  <h1>GitHub Repository Programming Language Analysis</h1>
+
+  <label for="github-username">Enter GitHub Username</label>
+  <input id="github-username">
+  <button id="analyze">Analyze</button>
+
+  <div id="status-message"></div>
+
+  <div id="repository-statistics">
+    <!-- todo - your script will display the number of repositories with each programming language  -->
+  </div>
+
+  <div id="repository-list">
+    <!-- todo - your script will display a list of repositories here -->
+  </div>
+
+</div>
+
+<!-- TODO Use JavaScript to display list of languages and frequencies -->
+
+<script>
+
+  let analyzeButton = document.querySelector('#analyze')
+  let usernameInput = document.querySelector('#github-username')
+
+  let statusMessage = document.querySelector('#status-message')
+
+  let repoList = document.querySelector('#repository-list')
+  let repoStats = document.querySelector('#repository-statistics')
+
+
+  analyzeButton.addEventListener('click', function() {
+    let username = usernameInput.value
+    let url = `https://api.github.com/users/${username}/repos`
+
+    statusMessage.innerHTML = 'Please wait...'
+
+    fetch(url)   // make request to URL
+            .then(response => response.json())  // extract the JSON from the response
+            .then(githubJson => {
+              displayRepositoriesOnPage(githubJson)
+            })
+            .catch(error => {    // handle errors that occur when requesting data or processing the response
+              console.log(error)
+              alert('Error fetching data from GitHub. Verify you are connected to the internet and the username is correct.')
+            })
+            .finally( () => {
+              statusMessage.innerHTML = ''  // clear status message. Code in the finally handler always runs, regardless if the request works or failed.
+            })
+  })
+
+  function displayRepositoriesOnPage(githubJson) {
+
+    console.log(githubJson)   // just to show you that the JSON is available here
+    // TODO use the JSON to display a list of the user's repositories
+
+    let repoListHeader = document.createElement('h2')
+    repoListHeader.innerHTML = 'Repository List'
+
+    githubJson.forEach(function(repository) {
+
+      let nameHeaderEL = document.createElement('h3')
+      let repoName = repository.name
+      nameHeaderEl.innerHTML = repoName
+      repoList.appendChild(nameHeaderEL)
+
+      let urlLinkEl = document.createElement('a')
+      let repoURL = repository.html_url
+      urlLinkEl.href = repoURL
+      urlListItem.innerHTML = 'GitHub Link'
+      repoList.appendChild(urlLinkEl)
+
+      let languageElement = document.createElement('h2')
+      let repoLang = repository.language
+      let langCounter = 0
+      languageElement.innerHTML = langCounter
+      repoList.appendChild(languageElement)
+
+
+
+    })
+
+
+    // TODO can you create a link to that repository at GitHub?
+    //   Hint: you can make a new a (anchor) element, and set that element's href attribute like this
+    //   myNewAElement.href = 'https://whatever.the/url/is'   // in this code, your URL will most likely be a variable
+
+    // TODO what happens if you search for one user, then another user? Clear previous search results before displaying new list of repositories
+
+    // What if the user doesn't have any repositories? Display an appropriate message - you can decide how you'll display this.
+
+    // TODO analyze the response and count the number of repositories in each programming language.
+    // TODO create elements on page to display the languages used and each languages' frequency
+
+  }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tree Order Form</title>
+
+  <style>
+
+    input, select {
+      width: 100%;
+      padding: 5px;
+      margin: 5px 5px 5px 0;
+      box-sizing: border-box;
+    }
+
+    input.error, select.error {
+      border: 2px red solid;
+    }
+
+  </style>
+
+</head>
+<body>
+
+<h1>Minnesota Tree Order Form</h1>
+
+<p>Enter information to order your tree. All fields are required.</p>
+
+<h2>Order Information</h2>
+
+<label for="homeowner-name">Homeowner Name</label><input id="homeowner-name" name="homeowner-name">
+<br>
+<label for="homeowner-house-number">House Number</label><input id="homeowner-house-number" name="homeowner-house-number">
+<br>
+<label for="homeowner-street-name">Street Name</label><input id="homeowner-street-name" name="homeowner-street-name">
+<br>
+<label for="city">City</label><input id="city" name="city">
+<br>
+<!-- All orders must be for Minnesota, so this input is not editable -->
+<label for="state">State</label><input id="state" name="state" value="Minnesota" disabled>
+<br>
+<label for="zipcode">Zip Code</label><input id="zipcode" name="zipcode" type="number">
+<br>
+
+<label for="tree-type">Tree Type</label>
+<select id="tree-type">
+  <!-- Unselectable message shown. Since this will be required, it forces the user to actually pick a tree, not just click submit for the default first option -->
+  <option disabled selected value=""> Select a tree </option>
+  <!-- The options that the user will be allowed to select, or choose from -->
+  <option name="tree-type">Cedar</option>
+  <option name="tree-type">Maple</option>
+  <option name="tree-type">Oak</option>
+</select>
+<br>
+
+<button id="submit-order">Submit Order</button>
+
+<h2>Order Summary</h2>
+
+<p id="order-summary">
+</p>
+
+
+
+<script>
+
+  let homeownerNameInput = document.querySelector('#homeowner-name')
+  let homeownerHouseNumberInput = document.querySelector('#homeowner-house-number')
+  let homeownerStreetNameInput = document.querySelector('#homeowner-street-name')
+  let treeTypeSelect = document.querySelector('#tree-type')
+  let cityInput = document.querySelector('#city')
+  let zipCodeInput = document.querySelector('#zipcode')
+
+  let submitButton = document.querySelector('#submit-order')
+
+  let orderSummaryParagraph = document.querySelector('#order-summary')
+
+  submitButton.addEventListener('click', function() {
+
+    let name = homeownerNameInput.value
+    let houseNumber = homeownerHouseNumberInput.value
+    let streetName = homeownerStreetNameInput.value
+    let treeType = treeTypeSelect.value
+    let city = cityInput.value
+    let zipcode = zipCodeInput.value
+
+    let orderSummaryTmplt = `Thanks for your order, ${name}!<br>
+                             Tree ordered: ${treeType}<br>
+                             Shipping Address: ${houseNumber} ${streetName}, ${city}, Minnesota ${zipcode}`
+    let errors = []
+
+    // Check all inputs have a value and add error class if they are incorrect/nonexistent
+    // If an input is correctly entered, remove error class whether it was there before or not
+    if (!name) {
+      errors.push('Enter homeowner name')
+    }
+
+    if (!houseNumber) {
+      errors.push('Enter house number')
+    }
+
+    if (!streetName) {
+      errors.push('Enter street name')
+    }
+
+    if (!treeType) {
+      errors.push('Select desired tree type')
+    }
+
+    if (!city) {
+      errors.push('Enter city of residence')
+    }
+
+    if (!zipcode || zipcode < 55001 || zipcode > 56763) { // Check zip is entered and is a Minnesota zip
+      errors.push('Enter Minnesota zipcode (between 55001-56763)')
+    }
+
+    // If there are any errors in the list, this will show a dialog alerting the user to fix
+    // whatever specific problems occurred within the form; it will then stop processing
+    if (errors.length > 0) {
+
+      let errorMessage = errors.join('\n')
+      alert(errorMessage)
+    } else {
+
+      orderSummaryParagraph.innerHTML = orderSummaryTmplt
+      homeownerNameInput.value = ''
+      homeownerHouseNumberInput.value = ''
+      homeownerStreetNameInput.value = ''
+      treeTypeSelect.value = ''
+      cityInput.value = ''
+      zipCodeInput.value = ''
+
+    }
+
+
+
+  })
+
+</script>
+
+</body>
+</html>
+

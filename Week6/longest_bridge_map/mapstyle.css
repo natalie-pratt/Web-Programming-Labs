@@ -1,0 +1,25 @@
+#bridges-map {
+    width: 730px;
+    height: 600px;
+}
+
+#chart-div {
+    width: 700px;
+    height: 450px;
+}
+
+.parent-div {
+    display: flex;
+}
+
+.child-div {
+    flex: 1;
+    border: 2px solid darkslategrey;
+    margin: 10px;
+    text-align: center;
+}
+
+.child-div:first-child {
+    margin-right: 20px;
+    width: 650px;
+}

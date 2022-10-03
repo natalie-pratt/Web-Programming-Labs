@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Events</title>
+
+<!--  Bootstrap  -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+          crossorigin="anonymous">
+
+    <style>
+
+        #canvas {
+            border: 1px black solid;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="mx-5 my-4">
+    <P>Drag the mouse on the canvas</P>
+    <canvas id="canvas" height="400" width="400"></canvas>
+
+    <div class="my-3">
+        <input id="color-input" type="color">
+            <label for="color-input" id="color-input-label">Select Stroke Color</label>
+
+            <input id="size-input" type="range" class="mx-3">
+                <label for="size-input" id="size-input-label">Select Size</label>
+
+    </div>
+
+    <button id="clear-button" class="btn btn-danger btn-md">Clear All</button>
+
+</div>
+
+<script>
+
+
+
+    let canvas = document.querySelector('#canvas')
+    let context = canvas.getContext('2d')
+
+    // Keep track of whether the mouse button has been pressed down or not.
+    // Think of this as whether the user is drawing or not, is their brush on the canvas?
+    let mousedown = false
+
+    canvas.addEventListener('mousedown', function() {
+        mousedown = true
+    })
+
+    canvas.addEventListener('mouseup', function() {
+        mousedown = false
+    })
+
+    // If mouse leaves the canvas then stop drawing
+    canvas.addEventListener('mouseout', function() {
+        mousedown = false
+    })
+
+    canvas.addEventListener('mousemove', function() {
+
+        // If the mouse button is not pressed down, do not draw.
+        if (!mousedown) { return }
+
+        // event is a built-in variable, contains the event that triggered this function
+        // get the x, y location of the event
+        let x = event.offsetX
+        let y = event.offsetY   //offsetX, offsetY, may not work in older browsers
+
+        //Draw a filled rectangle centered under the mouse click
+        //x, y is the top left corner, so shift up and left by 5 to center it under the mouse.
+
+        let drawColorInput = document.querySelector('#color-input')
+        let drawSizeInput = document.querySelector('#size-input')
+
+        let size = drawSizeInput.value
+        context.fillStyle = drawColorInput.value
+
+        context.lineWidth = 5
+        context.beginPath()
+        context.arc(x-5, y-5, size, size, 100)
+
+        context.fill()
+
+    })
+
+    let clearButton = document.querySelector('#clear-button')
+
+    clearButton.addEventListener('click', function() {
+
+        context.fillStyle = 'white'
+        context.fillRect(0, 0, canvas.height, canvas.width)
+
+    })
+
+</script>
+
+</body>
+</html>

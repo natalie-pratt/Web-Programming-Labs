@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Where is the ISS?</title>
+
+    <!-- Leaflet JS/CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+          crossorigin="anonymous">
+
+    <script async defer src="fetch.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body class="m-3">
+
+  <h1>Where is the ISS?</h1>
+
+    <div>
+
+        <p>On <span id="current-time"></span>, the ISS is over the following coordinates:</p>
+
+        <p>ISS Latitude: <span id="iss-lat"></span></p>
+        <p>ISS Longitude: <span id="iss-long"></span></p>
+     </div>
+
+    <div id="iss-map"></div>
+
+  <p>ISS icon by Viktor Korobkov from
+      <a href="https://thenounproject.com/browse/icons/term/iss/"target="_blank" title="iss Icons">Noun Project</a>
+  </p>
+
+</body>
+</html>

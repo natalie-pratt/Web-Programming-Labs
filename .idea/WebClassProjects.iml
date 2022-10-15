@@ -12,5 +12,6 @@
     <orderEntry type="library" name="p5.js" level="application" />
     <orderEntry type="library" name="leaflet" level="application" />
     <orderEntry type="library" name="chart.js" level="application" />
+    <orderEntry type="library" name="vue" level="application" />
   </component>
 </module>

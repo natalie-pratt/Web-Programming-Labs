@@ -1,0 +1,7 @@
+
+This error occurs when you try to access (render) a value in the View using a Vue app template
+when that value has not been computed or defined in some way in the model. It is not something to
+be ignored. For instance, if you add a computed value variable to the View and haven't yet 
+put in the computed method into the model, it will give you this error because the variable will have no value.
+To fix it you must define the variable value within the model, either by creating the computed field or by setting
+its value somewhere else within the model.

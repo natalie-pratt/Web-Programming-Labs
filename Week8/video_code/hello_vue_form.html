@@ -27,15 +27,16 @@
 
         <script>
 
+            // Create app
             let app = Vue.createApp({
-                data() {
-                    return {
+                data() { 
+                    return { // Add empty name data
                         name: ''
                     }
                 },
                methods: {
                 clear() {
-                    this.name = ''
+                    this.name = '' // Clear name
                 }
                }
             })

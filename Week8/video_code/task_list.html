@@ -19,38 +19,37 @@
             
             <label for="task" class="mx-2">Please enter your to do task:</label>
             <input id="task" v-model="newTask">
-            <button v-on:click="addTask" class="btn btn-dark btn-sm mx-1">Add</button>
-            <button v-on:click="clear" class="btn btn-danger btn-sm mx-1">Clear</button>
+            <button v-on:click="addTask" class="btn btn-dark btn-sm mx-1">Add</button> 
+            <button v-on:click="clear" class="btn btn-danger btn-sm mx-1">Clear</button> 
             
             <ul>
-                <li v-for="task in taskList">{{ task }}</li>
+                <li v-for="task in taskList">{{ task }}</li> 
             </ul>
 
         </div>
 
         <script>
-
-            document.addEventListener('keyup', function() {
-
+            
+            // Create app
             let app = Vue.createApp({
                 data() {
-                    return {
+                    return { // Add new blank task and a blank task list
                         newTask: '',
                         taskList:[]
                     }
                 },
-                methods: {
-                    addTask() {
+                methods: { 
+                    addTask() { // Method to add a task
                         this.taskList.push(this.newTask)
                         this.newTask = ''
                     },
-                    clear() {
+                    clear() { // Clear all tasks from list
                         this.taskList = []
                     }
                 }        
             })
 
-            app.mount('#app')
+            app.mount('#app') // Connect app to the app div
 
         </script>
 

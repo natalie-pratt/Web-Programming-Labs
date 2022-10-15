@@ -20,27 +20,28 @@
 
         <script>
 
+            // Create app
             let app = Vue.createApp({
                 data() {
-                    return {
+                    return { // Add data
                         message: 'Hello World',
                         maxExclamationPoints: 10,
                         exclamationPoints: 0
                     }
                 },
-                methods: {
+                methods: { // Method will add exclamation points until max is reached
                     addExclamation() {
                         if (this.exclamationPoints < this.maxExclamationPoints) {
                             this.exclamationPoints++
                         } else {
                             alert('Maximum number of exclamation points is 10.')
                         }
-                    },
+                    }, // Will set exclamation points back to 0
                     clearExclamation() {
                         this.exclamationPoints = 0
                     }
                 },
-                computed: {
+                computed: { // Will compute the number of exclamation points need to be added and returns message with points
                     messageWithExclamationPoints() {
                         let messageWithPoints = this.message
                         for (let x = 0; x < this.exclamationPoints; x++) {

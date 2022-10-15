@@ -44,16 +44,17 @@
 
         <script>
 
+            // Create app
             let app = Vue.createApp({
                 data() {
-                    return {
+                    return { // Data to present in app
                         name: 'Hoodie',
                         quantity: 1,
                         unitPrice: 44.99,   
                     }
                 },
                 computed: {
-                    total(){
+                    total(){ // Get total price of all items
                         let totalPrice = this.quantity * this.unitPrice
                         return totalPrice.toFixed(2)
                     }

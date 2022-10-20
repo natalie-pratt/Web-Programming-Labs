@@ -11,6 +11,26 @@
 </head>
 <body>
 
+    <div  class="jumbotron">
+        <h1 id="page-header">Trivia Quiz!</h1>
+        <p>This quiz will test your knowledge on a variety of topics -
+            of your choice!
+            <br>
+            Choose a topic below, and how many questions
+            you would like to be asked (up to 50).</p>
+    </div>
+
+
+    <div  id="body-div" class="m-5">
+        <label for="category-selection" id="select-category-header">Select a Category</label>
+        <select name="categories" id="categories">
+            <!-- Options will go here when fetched from API -->
+        </select>
+
+        <div id="questions-div">
+            <div id="category-list"></div>
+        </div>
+    </div>
 
 
 </body>
